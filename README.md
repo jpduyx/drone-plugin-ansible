@@ -6,7 +6,7 @@ Example .drone.yml:
 
     pipeline:
       test-ansible-playbook:
-        image: jpduyx/ansible:latest
+        image: jpduyx/drone-plugin-ansible:latest
         commands:
         - cd tst
         - chmod -R 0600 keys/id_rsa*
