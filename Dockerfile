@@ -6,8 +6,13 @@ LABEL Maintainer="Jean-Paul Duyx | github.com/jpduyx" \
 # Install packages
 
 RUN apk update && \
-      apk --no-cache add openssh-client ansible sshpass py-pip && \
-      pip install --upgrade pip apache_libcloud && \
+      #apk --no-cache add openssh-client sshpass ansible && \
+      apk --no-cache add openssh-client ansible && \
+      python3 -m ensurepip && \
+      pip3 install --no-cache-dir --upgrade apache_libcloud && \
+      rm `which pip3` && \
+      rm -r /usr/lib/python*/ensurepip && \ 
+      rm -r /root/.cache && \
       rm -rf /tmp/* && \
       rm -rf /var/cache/apk/*
 
