@@ -12,7 +12,7 @@ RUN apk update && \
       pip3 install --no-cache-dir --upgrade apache_libcloud && \
       rm `which pip3` && \
       rm -r /usr/lib/python*/ensurepip && \ 
-      rm -r /root/.cache && \
+      #rm -r /root/.cache && \
       rm -rf /tmp/* && \
       rm -rf /var/cache/apk/*
 
