@@ -16,9 +16,10 @@ an ansible container to be used as drone.io cicd pipeline plugin for testing ans
         - ansible-playbook --private-key="keys/id_rsa"    myplaybook.yml 
 
 ## example manual usage
+With this command you enter the container and you'll find your playbook mounted in /ansible/playbooks
 
   docker run --rm -it -v /absolute/path/to/playbook/folder:/ansible/playbooks jpduyx/drone-plugin-ansible /bin/sh
-  # inside the container manually run the tests that you like 
+
   
   
 # Docker Hub: 
