@@ -6,7 +6,7 @@ LABEL Maintainer="Jean-Paul Duyx | github.com/jpduyx" \
 # Install packages
 
 RUN apk update && \
-      apk --no-cache add openssh-client && \
+      apk --no-cache add openssh-client python3 && \
       python3 -m ensurepip && \
       pip3 install --no-cache-dir --upgrade pip && \
       pip3 install --no-cache-dir --upgrade apache_libcloud google-auth ansible requests docker && \
