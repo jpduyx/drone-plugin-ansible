@@ -13,3 +13,6 @@ Example .drone.yml:
         - pwd
         - ansible-playbook --private-key="keys/id_rsa"    myplaybook.yml 
 
+Docker Hub: 
+
+https://hub.docker.com/r/jpduyx/drone-plugin-ansible
