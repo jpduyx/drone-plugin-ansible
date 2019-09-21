@@ -6,10 +6,9 @@ LABEL Maintainer="Jean-Paul Duyx | github.com/jpduyx" \
 # Install packages
 
 RUN apk update && \
-      apk --no-cache add openssh-client python3 && \
+      apk --no-cache add ansible openssh-client  && \
       python3 -m ensurepip && \
-      pip3 install --no-cache-dir --upgrade pip && \
-      pip3 install --no-cache-dir --upgrade apache_libcloud google-auth ansible requests docker && \
+      pip3 install --no-cache-dir --upgrade docker apache_libcloud google-auth requests  && \
       rm -rf /usr/bin/pip3* && \
       rm -rf /usr/lib/python*/ensurepip && \ 
       rm -rf /root/.cache && \
@@ -18,4 +17,4 @@ RUN apk update && \
 
 ENV PATH /usr/sbin:$PATH
 
-CMD ["ansible", "--version"]
+CMD ["ansible-playbook"]
