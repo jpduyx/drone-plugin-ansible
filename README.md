@@ -25,3 +25,13 @@ With this command you enter the container and you'll find your playbook mounted 
 # Docker Hub: 
 
 https://hub.docker.com/r/jpduyx/drone-plugin-ansible
+
+
+# push new version to docker
+
+docker build . --tag jpduyx/drone-plugin-ansible:latest
+docker login 
+docker push jpduyx/drone-plugin-ansible:latest 
+
+(or also add ansible version number instead of latest?)
+
